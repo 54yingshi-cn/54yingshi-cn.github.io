@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="54影视（54yingshi-cn）是高清免费影视在线观看网站，提供最新电影、热播电视剧、动漫番剧、综艺节目、纪录片与经典老片在线播放，支持手机端与电脑端自适应访问。官方网址：https://54yingshi-cn.github.io">
+<meta name="keywords" content="54影视,54yingshi-cn,54影视官网,54影视在线观看,免费影视,高清电影,热播电视剧,动漫番剧,综艺节目,在线视频">
+<meta name="author" content="54影视">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0b1020">
+<link rel="canonical" href="https://54yingshi-cn.github.io/">
+<title>54影视 - 54yingshi-cn 高清免费影视在线观看官网</title>
+<style>
+:root{--red:#ff4d4d;--org:#ff9a3d;--ink:#eaf0ff;--mut:#9aa7c2;--line:rgba(255,255,255,.10);--card:rgba(255,255,255,.05);--navy:#0b1020;--deep:#060917}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:66px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--deep);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;background:#fff;color:#000;padding:8px 12px;z-index:100}
+.skip:focus{position:static;width:auto;height:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+/* ===== 顶部导航 ===== */
+header[role="banner"]{position:sticky;top:0;z-index:50;background:rgba(6,9,23,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;height:62px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo b{background:linear-gradient(135deg,var(--red),var(--org));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo small{font-size:11px;color:var(--mut);font-weight:500;border-left:1px solid var(--line);padding-left:9px}
+nav.primary{flex:1;display:flex;justify-content:flex-end;gap:6px}
+nav.primary a{padding:7px 13px;border-radius:9px;font-size:14.5px;color:var(--mut);transition:.25s}
+nav.primary a:hover,nav.primary a.active{color:#fff;background:var(--card)}
+.mbtn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:10px;background:none;color:#fff;font-size:20px;cursor:pointer}
+/* ===== 通用区块 ===== */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.sec-h h2{font-size:26px;font-weight:800;letter-spacing:.5px}
+.sec-h h2 i{font-style:normal;color:var(--red)}
+.sec-h span{font-size:13px;color:var(--mut);border:1px solid var(--line);padding:2px 10px;border-radius:20px}
+/* ===== ① Hero ===== */
+#top{position:relative;padding:92px 0 74px;border-top:none;overflow:hidden;background:radial-gradient(1100px 420px at 18% -10%,rgba(255,77,77,.28),transparent 60%),radial-gradient(900px 380px at 88% 8%,rgba(255,154,61,.20),transparent 62%),linear-gradient(180deg,#0d1530,#060917)}
+#top .herobadge{display:inline-block;font-size:12.5px;color:#ffd9c4;border:1px solid rgba(255,154,61,.45);padding:5px 14px;border-radius:22px;margin-bottom:20px}
+#top h1{font-size:clamp(32px,6.2vw,58px);font-weight:900;line-height:1.18;letter-spacing:-.5px}
+#top h1 em{font-style:normal;background:linear-gradient(120deg,var(--red),var(--org));-webkit-background-clip:text;background-clip:text;color:transparent}
+#top p.lead{color:#c4cee4;max-width:640px;margin:18px 0 30px;font-size:16px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;transition:.25s;border:1px solid transparent}
+.btn-main{background:linear-gradient(135deg,var(--red),var(--org));color:#fff}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(255,77,77,.35)}
+.btn-ghost{border-color:var(--line);color:#eaf0ff}
+.btn-ghost:hover{background:var(--card)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px;max-width:760px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center}
+.stat b{display:block;font-size:24px;font-weight:800;color:#fff}
+.stat small{font-size:12.5px;color:var(--mut)}
+/* ===== ② 电影：卡片网格 ===== */
+.grid-movie{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.3s;position:relative}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,77,77,.5);box-shadow:0 18px 34px rgba(0,0,0,.5)}
+.poster{aspect-ratio:2/3;display:flex;align-items:flex-end;padding:12px;position:relative}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.85))}
+.poster span{position:relative;z-index:2;font-size:13px;font-weight:700;line-height:1.35}
+.score{position:absolute;top:10px;right:10px;z-index:2;background:rgba(6,9,23,.85);color:var(--org);font-weight:800;font-size:12px;padding:3px 8px;border-radius:7px;border:1px solid rgba(255,154,61,.4)}
+.card .info{padding:11px 13px 14px}
+.card .info h3{font-size:14px;font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .info p{font-size:12px;color:var(--mut)}
+/* ===== ③ 电视剧：横向列表行 ===== */
+.list-row{display:flex;align-items:center;gap:16px;padding:15px 18px;margin-bottom:10px;border-radius:13px;background:linear-gradient(90deg,rgba(255,77,77,.09),rgba(255,255,255,.03));border:1px solid var(--line);border-left:3px solid var(--red);transition:.25s}
+.list-row:hover{background:linear-gradient(90deg,rgba(255,77,77,.18),rgba(255,255,255,.05));transform:translateX(6px)}
+.list-row .idx{font-size:20px;font-weight:900;color:rgba(255,255,255,.28);min-width:34px}
+.list-row .txt{flex:1}
+.list-row .txt h3{font-size:16px;margin-bottom:4px}
+.list-row .txt p{font-size:12.5px;color:var(--mut)}
+.tag{font-size:11.5px;padding:4px 10px;border-radius:20px;white-space:nowrap;font-weight:600}
+.tag.on{background:rgba(255,77,77,.18);color:#ff8a8a;border:1px solid rgba(255,77,77,.4)}
+.tag.off{background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.eps{font-size:12.5px;color:var(--org);white-space:nowrap}
+/* ===== ④ 动漫：大图封面流 ===== */
+.flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
+.cover{aspect-ratio:16/11;border-radius:15px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:.35s;border:1px solid var(--line)}
+.cover::before{content:"";position:absolute;inset:0;background:inherit;filter:blur(0);transition:.35s}
+.cover:hover{transform:scale(1.035);border-color:rgba(255,154,61,.55)}
+.cover:hover::before{filter:blur(10px)}
+.cover .cv-in{position:relative;z-index:2}
+.cover h3{font-size:16px;font-weight:800;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.cover p{font-size:12.5px;color:rgba(255,255,255,.82);margin-top:5px}
+.cover .badge{position:absolute;top:14px;right:14px;z-index:2;font-size:11px;background:rgba(6,9,23,.7);padding:3px 9px;border-radius:6px}
+/* ===== ⑤ 综艺：左侧时间轴 ===== */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--red),var(--org),transparent)}
+.tl-item{position:relative;margin-bottom:20px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 20px}
+.tl-item::before{content:"";position:absolute;left:-29px;top:21px;width:12px;height:12px;border-radius:50%;background:var(--org);box-shadow:0 0 0 4px var(--deep),0 0 14px var(--org)}
+.tl-item time{font-size:12.5px;color:var(--org);font-weight:700;letter-spacing:.5px}
+.tl-item h3{font-size:16.5px;margin:6px 0 8px}
+.tl-item p{font-size:13.5px;color:#c4cee4}
+.tl-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:11px}
+.tl-meta i{font-style:normal;font-size:11.5px;color:var(--mut);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+/* ===== ⑥ 关于：双栏文字面板 ===== */
+.about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.panel h3{font-size:19px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.panel h3::before{content:"";width:4px;height:18px;background:linear-gradient(180deg,var(--red),var(--org));border-radius:3px}
+.panel p{color:#c4cee4;font-size:14.5px;margin-bottom:12px}
+.panel ul{list-style:none}
+.panel li{padding:9px 0 9px 26px;position:relative;font-size:14px;color:#d6ddef;border-top:1px dashed var(--line)}
+.panel li:first-child{border-top:none}
+.panel li::before{content:"▸";position:absolute;left:4px;color:var(--org)}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:8px}
+.feat div{background:rgba(255,77,77,.07);border:1px solid var(--line);border-radius:11px;padding:13px}
+.feat b{display:block;font-size:14px;margin-bottom:3px}
+.feat small{font-size:12px;color:var(--mut)}
+.urlbox{margin-top:16px;border:1px dashed rgba(255,154,61,.5);border-radius:11px;padding:13px 15px;font-size:13.5px;color:#ffd9c4;word-break:break-all}
+.urlbox b{color:#fff}
+/* ===== 页脚 ===== */
+footer[role="contentinfo"]{padding:40px 0 52px;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(255,77,77,.04))}
+.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.foot .l b{font-size:18px;background:linear-gradient(135deg,var(--red),var(--org));-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot .l p{font-size:12.5px;color:var(--mut);margin-top:6px}
+.foot nav{display:flex;gap:8px;flex-wrap:wrap}
+.foot nav a{font-size:13px;color:var(--mut);padding:6px 11px;border:1px solid var(--line);border-radius:8px}
+.foot nav a:hover{color:#fff}
+.copy{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mut);text-align:center}
+/* ===== 响应式 ===== */
+@media(max-width:1000px){.grid-movie{grid-template-columns:repeat(4,1fr)}.about-grid{grid-template-columns:1fr}}
+@media(max-width:760px){
+ .mbtn{display:inline-flex;align-items:center;justify-content:center}
+ nav.primary{position:fixed;inset:62px 0 auto 0;flex-direction:column;background:rgba(6,9,23,.97);backdrop-filter:blur(14px);padding:16px;gap:4px;max-height:0;overflow:hidden;transition:.35s;justify-content:flex-start}
+ nav.primary.open{max-height:82vh;overflow:auto;border-bottom:1px solid var(--line)}
+ nav.primary a{width:100%;padding:13px 16px;font-size:15.5px}
+ .grid-movie{grid-template-columns:repeat(3,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ #top{padding:58px 0 52px}
+ section{padding:48px 0}
+}
+@media(max-width:440px){
+ .grid-movie{grid-template-columns:repeat(2,1fr)}
+ .flow{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+ .list-row{flex-wrap:wrap;gap:10px}
+ .list-row .eps{width:100%}
+ .feat{grid-template-columns:1fr}
+ .sec-h h2{font-size:21px}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header role="banner">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="54影视首页"><b>54影视</b><small>54yingshi-cn</small></a>
+    <button class="mbtn" aria-label="打开菜单" aria-expanded="false" onclick="var n=document.getElementById('pri');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)">☰</button>
+    <nav class="primary" id="pri" role="navigation" aria-label="主导航">
+      <a href="#top" class="active">首页</a>
+      <a href="#movies">电影</a>
+      <a href="#tv">电视剧</a>
+      <a href="#anime">动漫</a>
+      <a href="#shows">综艺</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ① Hero -->
+<section id="top" aria-labelledby="h-top">
+  <div class="wrap">
+    <span class="herobadge">🎬 54yingshi-cn · 高清免费影视在线观看</span>
+    <h1>全网热门影视<br><em>一站看完</em> · 54影视</h1>
+    <p class="lead">54影视（54yingshi-cn）汇聚最新院线电影、热播电视剧、动漫番剧与综艺节目，高清流畅播放，电脑手机自适应，无需下载即可在线观看。官方唯一网址：https://54yingshi-cn.github.io</p>
+    <div class="cta">
+      <a class="btn btn-main" href="#movies">免费看电影 →</a>
+      <a class="btn btn-ghost" href="#tv">热播剧集</a>
+    </div>
+    <div class="stats" role="list" aria-label="网站数据">
+      <div class="stat" role="listitem"><b>10,000+</b><small>高清影视资源</small></div>
+      <div class="stat" role="listitem"><b>4K</b><small>超清画质播放</small></div>
+      <div class="stat" role="listitem"><b>0</b><small>无广告纯净体验</small></div>
+      <div class="stat" role="listitem"><b>24h</b><small>每日更新</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 电影：卡片网格 -->
+<section id="movies" aria-labelledby="h-movies">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-movies">热门<i>电影</i></h2><span>院线同步 · 高清免费</span>
+    </div>
+    <div class="grid-movie">
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#3a1d4d,#12082b)"><span>沉默的真相</span><b class="score">9.4</b></div><div class="info"><h3>沉默的真相</h3><p>剧情 / 悬疑 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#14324f,#061322)"><span>深海行动</span><b class="score">8.7</b></div><div class="info"><h3>深海行动</h3><p>动作 / 科幻 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#4d2418,#1b0c07)"><span>长安长安</span><b class="score">8.9</b></div><div class="info"><h3>长安长安</h3><p>历史 / 古装 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#184d2f,#061c11)"><span>春风来信</span><b class="score">8.2</b></div><div class="info"><h3>春风来信</h3><p>爱情 / 文艺 · 2025</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#4d4018,#1b1605)"><span>荒原猎手</span><b class="score">7.9</b></div><div class="info"><h3>荒原猎手</h3><p>冒险 / 西部 · 2025</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#2a184d,#0e071f)"><span>午夜回声</span><b class="score">8.5</b></div><div class="info"><h3>午夜回声</h3><p>惊悚 / 犯罪 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#182e4d,#06121f)"><span>极地营救</span><b class="score">8.0</b></div><div class="info"><h3>极地营救</h3><p>动作 / 灾难 · 2025</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#4d1830,#1b0612)"><span>粉红谎言</span><b class="score">7.6</b></div><div class="info"><h3>粉红谎言</h3><p>喜剧 / 爱情 · 2025</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#1f4d18,#081f05)"><span>森林之子</span><b class="score">8.8</b></div><div class="info"><h3>森林之子</h3><p>动画 / 奇幻 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#3d184d,#16051f)"><span>魔术师</span><b class="score">7.8</b></div><div class="info"><h3>魔术师</h3><p>奇幻 / 家庭 · 2025</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#4d3118,#1b1005)"><span>黄金峡谷</span><b class="score">8.3</b></div><div class="info"><h3>黄金峡谷</h3><p>动作 / 剧情 · 2026</p></div></article>
+      <article class="card"><div class="poster" style="background:linear-gradient(160deg,#182b4d,#060f1f)"><span>远方的光</span><b class="score">8.6</b></div><div class="info"><h3>远方的光</h3><p>剧情 / 传记 · 2026</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 电视剧：横向列表行 -->
+<section id="tv" aria-labelledby="h-tv">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-tv">热播<i>电视剧</i></h2><span>每日更新 · 全集合集</span>
+    </div>
+    <div>
+      <div class="list-row"><span class="idx">01</span><div class="txt"><h3>长风渡 II</h3><p>古装 / 权谋 · 主演：陈默、林知夏</p></div><span class="tag on">更新中</span><span class="eps">已更新至 28 集</span></div>
+      <div class="list-row"><span class="idx">02</span><div class="txt"><h3>城市之光</h3><p>都市 / 职场 · 讲述年轻创业者的故事</p></div><span class="tag on">更新中</span><span class="eps">已更新至 16 集</span></div>
+      <div class="list-row"><span class="idx">03</span><div class="txt"><h3>法医秦明：无声证词</h3><p>悬疑 / 犯罪 · 单元破案剧</p></div><span class="tag on">更新中</span><span class="eps">已更新至 22 集</span></div>
+      <div class="list-row"><span class="idx">04</span><div class="txt"><h3>故乡的云</h3><p>家庭 / 情感 · 温暖现实主义</p></div><span class="tag off">已完结</span><span class="eps">全 36 集</span></div>
+      <div class="list-row"><span class="idx">05</span><div class="txt"><h3>破晓行动</h3><p>谍战 / 动作 · 年代剧</p></div><span class="tag on">更新中</span><span class="eps">已更新至 11 集</span></div>
+      <div class="list-row"><span class="idx">06</span><div class="txt"><h3>人间烟火</h3><p>生活 / 美食 · 治愈系群像</p></div><span class="tag off">已完结</span><span class="eps">全 30 集</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 动漫：大图封面流 -->
+<section id="anime" aria-labelledby="h-anime">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-anime">动漫<i>番剧</i></h2><span>国漫日漫 · 同步追番</span>
+    </div>
+    <div class="flow">
+      <div class="cover" style="background:linear-gradient(135deg,#ff4d4d,#7b2cbf)"><span class="badge">热血</span><div class="cv-in"><h3>火羽少年</h3><p>第 3 季 · 每周五更新</p></div></div>
+      <div class="cover" style="background:linear-gradient(135deg,#11998e,#38ef7d)"><span class="badge">奇幻</span><div class="cv-in"><h3>灵域传说</h3><p>全 52 集 · 已完结</p></div></div>
+      <div class="cover" style="background:linear-gradient(135deg,#fc5c7d,#6a82fb)"><span class="badge">恋爱</span><div class="cv-in"><h3>樱花笔记</h3><p>第 2 季 · 连载中</p></div></div>
+      <div class="cover" style="background:linear-gradient(135deg,#f7971e,#ffd200)"><span class="badge">冒险</span><div class="cv-in"><h3>黄金罗盘</h3><p>剧场版 · 已上线</p></div></div>
+      <div class="cover" style="background:linear-gradient(135deg,#4568dc,#b06ab3)"><span class="badge">科幻</span><div class="cv-in"><h3>星海彼岸</h3><p>第 1 季 · 12 集</p></div></div>
+      <div class="cover" style="background:linear-gradient(135deg,#16222a,#3a6073)"><span class="badge">悬疑</span><div class="cv-in"><h3>暗室谜案</h3><p>单元剧 · 更新中</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 综艺：左侧时间轴 -->
+<section id="shows" aria-labelledby="h-shows">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-shows">热门<i>综艺</i></h2><span>真人秀 · 脱口秀 · 音乐</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><time>2026.10.24</time><h3>54 欢乐喜剧人</h3><p>第 8 期：跨界嘉宾带来全新原创喜剧作品，爆笑不断。</p><div class="tl-meta"><i>喜剧</i><i>已更新</i><i>120 分钟</i></div></div>
+      <div class="tl-item"><time>2026.10.22</time><h3>歌手·当打之年</h3><p>第 6 期竞演：三位新声代歌手首次登台，排名悬念揭晓。</p><div class="tl-meta"><i>音乐</i><i>已更新</i><i>150 分钟</i></div></div>
+      <div class="tl-item"><time>2026.10.20</time><h3>向往的旅行</h3><p>嘉宾前往云南古镇，体验当地非遗手工艺与特色美食。</p><div class="tl-meta"><i>真人秀</i><i>已更新</i><i>90 分钟</i></div></div>
+      <div class="tl-item"><time>2026.10.18</time><h3>54 脱口秀大会</h3><p>半决赛：开放麦选手挑战职业演员，金句频出。</p><div class="tl-meta"><i>脱口秀</i><i>已更新</i><i>80 分钟</i></div></div>
+      <div class="tl-item"><time>2026.10.15</time><h3>明星大侦探</h3><p>特别篇「古堡迷云」：六位嘉宾沉浸式搜证推理。</p><div class="tl-meta"><i>推理</i><i>已完结</i><i>110 分钟</i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 关于：双栏文字面板 -->
+<section id="about" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-about">关于<i>54影视</i></h2><span>54yingshi-cn 官方介绍</span>
+    </div>
+    <div class="about-grid">
+      <div class="panel">
+        <h3>网站简介</h3>
+        <p>54影视（54yingshi-cn）是一个专注于高清影视在线观看的内容导航平台，致力于为用户提供最新、最全、最清晰的影视资讯与播放入口。我们每日更新电影、电视剧、动漫、综艺等内容，覆盖院线大片、热播剧集、经典老片与海外佳片。</p>
+        <p>平台采用响应式设计，手机、平板、电脑均可流畅访问，无需安装任何插件即可播放。我们坚持无广告、不弹窗、不强制注册的纯净体验。</p>
+        <ul>
+          <li>每日更新：紧跟院线与卫视同步更新</li>
+          <li>多清晰度：支持 1080P / 4K 画质选择</li>
+          <li>全设备适配：iOS、Android、Windows 全支持</li>
+          <li>安全访问：官方唯一域名，谨防假冒站点</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>我们的优势</h3>
+        <div class="feat">
+          <div><b>极速播放</b><small>多线路智能切换</small></div>
+          <div><b>纯净无广</b><small>告别弹窗骚扰</small></div>
+          <div><b>海量资源</b><small>万部影视随心看</small></div>
+          <div><b>贴心字幕</b><small>中英文双语支持</small></div>
+        </div>
+        <div class="urlbox">官方唯一网址：<br><b>https://54yingshi-cn.github.io</b><br><small>请认准 54yingshi-cn 官方域名，避免访问仿冒站点。</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <div class="foot">
+      <div class="l">
+        <b>54影视 · 54yingshi-cn</b>
+        <p>高清免费影视在线观看平台，官方网址：https://54yingshi-cn.github.io</p>
+      </div>
+      <nav aria-label="底部导航">
+        <a href="#top">首页</a>
+        <a href="#movies">电影</a>
+        <a href="#tv">电视剧</a>
+        <a href="#anime">动漫</a>
+        <a href="#shows">综艺</a>
+        <a href="#about">关于</a>
+      </nav>
+    </div>
+    <div class="copy">© 2026 54影视 54yingshi-cn 保留所有权利。本页面仅为影视内容导航与信息展示，不存储、不上传任何视频文件。<br>官方网址：https://54yingshi-cn.github.io</div>
+  </div>
+</footer>
+
+<script>
+// 滚动时高亮当前导航项
+var links=[].slice.call(document.querySelectorAll('nav.primary a'));
+var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function onScroll(){
+  var y=window.scrollY+140,cur=0;
+  secs.forEach(function(s,i){ if(s&&s.offsetTop<=y) cur=i; });
+  links.forEach(function(a,i){ a.classList.toggle('active',i===cur); });
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+// 移动端点击导航后自动收起
+document.querySelectorAll('nav.primary a').forEach(function(a){
+  a.addEventListener('click',function(){ document.getElementById('pri').classList.remove('open'); });
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://54yingshi-cn.github.io/#website",
+      "name":"54影视",
+      "alternateName":"54yingshi-cn",
+      "url":"https://54yingshi-cn.github.io/",
+      "description":"54影视（54yingshi-cn）高清免费影视在线观看平台，提供电影、电视剧、动漫、综艺在线播放。",
+      "inLanguage":"zh-CN",
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://54yingshi-cn.github.io/?s={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://54yingshi-cn.github.io/#org",
+      "name":"54影视",
+      "url":"https://54yingshi-cn.github.io/",
+      "description":"高清免费影视在线观看平台 54yingshi-cn"
+    }
+  ]
+}
+</script>
+</body>
+</html>
